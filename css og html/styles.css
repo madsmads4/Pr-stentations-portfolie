@@ -5,8 +5,14 @@ body {
   padding: 0;
 }
 
+img {
+  display: block;  /* Ensures images don't inherit text-align properties */
+  margin-left: auto;
+  margin-right: auto;  /* Centers images if necessary */
+}
+
 /* Nav bar styling */
-.nav_bar {
+.navbar {
   background-color: #171A21;
   width: 100%;
   height: 200px;
@@ -16,24 +22,26 @@ body {
   padding: 20px 0;
 }
 
-.sub_nav {
+.nav__sub {
   display: flex;
   gap: 10px;
 }
 
-.nav_logo {
+.nav__logo {
   display: flex;
   align-self: center;
   height: 100px;
   justify-content: center;
 }
 
-.nav_hjemmeside_navn {
+.nav__hjemmeside-navn {
+  display: flex;
+  align-items: center;
   color: #C7D5E0;
   font-size: 30px;
 }
 
-.nav_button {
+.nav__button {
   background-color: #1F314B;
   display: flex;
   width: 150px;
@@ -47,68 +55,78 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.nav_button:hover {
+.nav__button:hover {
   background-color: #C7D5E0;
   color: #1F314B;
 }
 
 /* About Me Section */
-.about_me {
+.about-me {
   text-align: center;
   margin-top: 150px; 
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
-.about_me h1 {
+.about-me h1 {
   font-size: 36px;
   color: #C7D5E0;
   margin-bottom: 20px;
 }
 
-.boxes {
+.about-me h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-me__boxes {
   display: flex;
   justify-content: space-around;
-  gap: 15px;
   flex-wrap: wrap;
 }
 
-.box {
+.about-me__box {
   width: 30%;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
+  text-align: left;
 }
 
-.box1 {
+.about-me__box1 {
   background-color: #1F314B;
   color: #C7D5E0;
   font-size: 16px;
   line-height: 1.5;
+  text-align: left;
 }
 
-.rotation {
+.about-me__rotation {
   background-color: var(--base-100);
   border-radius: 30px;
   padding: 70px 0px;
   border-radius: 0px;
 }
 
+.about-me__rotation--pic {
+  width: 100px;
+}
+
 @media (max-width:1024px) {
 }
-.reel {
+.about-me__reel {
   width: 100vw;
   max-width: 100%;
   height: 128px;
   overflow: hidden;
   position: relative;
 }
-  .reeling {
+  .about-me__reeling {
       position: absolute;
       white-space: nowrap;
-      will-change: transform;
       animation: rotating 10s linear infinite;
       display: flex;
-      gap:10px;
+      gap: 10px;
+      animation-iteration-count: infinite;
   }
 
 @keyframes rotating{
@@ -116,15 +134,15 @@ body {
       transform:translateX(0);
   }
   100%{
-    transform: translateX(-55%)
+    transform: translateX(-50%)
   }
 }
 
-.box2 {
+.about-me__box2 {
   background-color: #1F314B;
 }
 
-.mads_billede {
+.about-me__mads_billede {
   width: 100%;
   max-width: 90%; 
   height: auto;
@@ -143,14 +161,14 @@ body {
   margin-bottom: 20px;
 }
 
-.projects-container {
+.projects__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 15px;
 }
 
-.project-box {
+.project__box {
   flex-basis: 40%;
   width: 30%;
   padding: 20px;
@@ -160,7 +178,11 @@ body {
   font-size: 16px;
   line-height: 1.5;
   box-sizing: border-box;
+  text-align: left;
 }
+
+/* Projects hoover Section */
+/* Maybe */
 
 .sprite {
   margin-left: auto;
@@ -181,21 +203,40 @@ padding: 0;
 box-sizing: border-box;
 }
 
-/* under work*/
-#project3 {
-  width: auto;
-  height: auto;
-  border-radius: 8px;
+.project__ninja {
+  width: 400px;
+  margin-bottom: 20px;
 }
 
-.project-box h3 {
+.project__flyer {
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.project__harbor {
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.project__pen-tool {
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+.project__udslidt {
+  margin-bottom: 20px;
+}
+
+.project__box h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
+  text-align: center;
 }
 
-.project-box p {
+.project__box p {
   font-size: 1em;
   color: #C7D5E0;
+  margin-top: 20px;
 }
 
 
@@ -212,23 +253,23 @@ box-sizing: border-box;
   margin-bottom: 20px;
 }
 
-.contact-info {
+.contact__info {
   margin: 20px;
 }
 
-.contact-info p {
+.contact__info p {
   font-size: 1.5em;
   color: #C7D5E0;
   margin-bottom: 20px;
 }
 
-.contact-buttons {
+.contact__buttons {
   display: flex;
   justify-content: center;
   gap: 20px; 
 }
 
-.contact-button {
+.contact__button {
   background-color: #66C0F4;
   color: #1B2838;
   padding: 15px 30px;
@@ -238,25 +279,25 @@ box-sizing: border-box;
   transition: background-color 0.3s ease;
 }
 
-.contact-button:hover {
+.contact__button:hover {
   background-color: #C7D5E0;
   color: #1F314B;
 }
 
  /* contact form section */
-.contact-form {
+.contact__form {
   text-align: center;
   margin-top: 60px;
 }
 
 /* invisible */
-.contact-form h2 {
+.contact__form h2 {
   font-size: 36px;
   color: #1B2838;
 }
 
 /* Style for form inputs and textarea */
-.form-group {
+.contact__form--group {
   margin-bottom: 20px;
   width: 100%;
   max-width: 600px;
@@ -290,7 +331,7 @@ textarea {
   resize: vertical;
 }
 
-.submit-button {
+.contact__form__button--submit {
   margin-top: 20px;
   background-color: #66C0F4;
   color: #1B2838;
@@ -302,7 +343,7 @@ textarea {
   transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
+.contact__form__button--submit:hover {
   background-color: #C7D5E0;
   color: #1F314B;
 }
@@ -317,56 +358,73 @@ footer {
   margin-top: 60px;
 }
 
-.footer-content p {
+.footer__content p {
   font-size: 16px;
   margin: 0;
 }
 
 @media (max-width: 600px) {
-  .nav_bar {
+  .navbar {
     flex-direction: column;
     align-items: flex-start;
+    height: 250px;
   }
 
-  .nav_button {
+  .nav__button {
     width: 100%;
     text-align: center;
     margin: 5px 0;
   }
 
   /* Stack boxes in About Me section */
-  .boxes {
+  .about-me__boxes {
     flex-direction: column;
     gap: 20px;
   }
 
-  .box {
+  .about-me__box {
     width: 100%;
   }
 
-  .mads_billede {
+  .about-me {
+    margin-top: 40px;
+  }
+
+  .about-me__mads_billede {
     max-width: 80%;
   }
 
-  .project-box {
+  .project__box {
     width: 100%;
-  }
-
-  .about_me {
-    margin-top: 40px;
   }
 
   .projects {
     margin-top: 30px;
   }
+
+  .project__flyer {
+    width: 400px;
+  }
+
+  .project__udslidt {
+    width: 400px;
+  }
+
+  .project__harbor {
+    width: 400px;
+  }
+
+  .project__pen-tool {
+    width: 400px;
+  }
 }
 
 @media (max-width: 600px) {
-  .contact-buttons {
+  .contact__buttons {
     flex-direction: column;
   }
 
-  .contact-button {
+  .contact__button {
     width: 100%;
     padding: 15px;
     text-align: center;
@@ -374,7 +432,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .form-group {
+  .contact__form--group {
     width: 90%;
   }
 
