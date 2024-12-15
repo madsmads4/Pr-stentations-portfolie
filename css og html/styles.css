@@ -461,7 +461,8 @@ footer {
   }
 
   .about-me__box {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
 
   .about-me {
@@ -470,6 +471,7 @@ footer {
 
   .about-me__mads_billede {
     height: auto;
+    width: 500px;
     border-radius: 8px;
   }
 
