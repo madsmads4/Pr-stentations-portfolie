@@ -327,7 +327,7 @@ input::placeholder, textarea::placeholder {
 
 textarea {
   height: 150px;
-  resize: vertical;
+  resize: none;
 }
 
 .contact__form__button--submit {
